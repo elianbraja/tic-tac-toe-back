@@ -17,7 +17,9 @@ gem 'puma', '~> 3.11'
 # gem 'bcrypt', '~> 3.1.7'
 #
 gem 'devise', '~> 4.2'
+gem 'devise-jwt', '~> 0.8.1'
 gem 'graphql', '~> 1.12', '>= 1.12.9'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -26,7 +28,7 @@ gem 'graphql', '~> 1.12', '>= 1.12.9'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,6 +41,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'graphiql-rails'
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
