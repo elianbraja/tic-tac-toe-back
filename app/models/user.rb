@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  code                   :integer
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -50,5 +51,11 @@ class User < ApplicationRecord
   validates :first_name, :presence => true, :allow_blank => false
   validates :last_name, :presence => true, :allow_blank => false
   validates :password_confirmation, :presence => true, :allow_blank => false
+
+  before_save :generate_code
+
+  def generate_code
+    self.code = SecureRandom.random_number(10**6)
+  end
 
 end

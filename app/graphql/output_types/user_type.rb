@@ -7,6 +7,7 @@ module OutputTypes
     field :email, String, 'user email', null: false
     field :first_name, String, 'first name', null: false
     field :last_name, String, 'last name', null: false
+    field :code, Integer, 'code', null: false
     field :token, String, 'user token', null:false
   end
 end
