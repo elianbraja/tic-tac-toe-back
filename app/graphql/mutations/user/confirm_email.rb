@@ -1,7 +1,7 @@
 module Mutations::User
   class ConfirmEmail < Mutations::BaseMutation
 
-    description "Confirm email for users"
+    description "Confirm user email"
     argument :email_token, String, description: "token received by email", required: true
 
     def resolve(email_token:)

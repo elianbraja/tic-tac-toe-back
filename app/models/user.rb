@@ -49,5 +49,6 @@ class User < ApplicationRecord
 
   validates :first_name, :presence => true, :allow_blank => false
   validates :last_name, :presence => true, :allow_blank => false
+  validates :password_confirmation, :presence => true, :allow_blank => false
 
 end

@@ -8,10 +8,10 @@ module Mutations::User
 
     def resolve(email:, password:)
       user = User.find_by_email(email)
-      if user && user.valid_password?(password)
+      if user && user.valid_password?(password) && user.confirmed?
         user
       else
-        nil
+        raise GraphQL::ExecutionError, nil
       end
 
     rescue ActiveRecord::RecordNotFound => e
