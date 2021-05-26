@@ -52,7 +52,7 @@ class User < ApplicationRecord
   validates :last_name, :presence => true, :allow_blank => false
   validates :password_confirmation, :presence => true, :allow_blank => false
 
-  before_save :generate_code
+  before_create :generate_code
 
   def generate_code
     self.code = SecureRandom.random_number(10**6)
